@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 - Dynamic Paragraphs</title>
+    <style>
+        body { font-family: Inter, sans-serif; padding: 40px; }
+        button { padding: 12px 24px; margin: 10px; }
+        .paragraph { padding: 12px; background: #f0f0f0; margin: 8px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Day 2: Dynamic Element Creator</h1>
+    <button onclick="addParagraph()">Add Numbered Paragraph</button>
+    <button onclick="clearAll()">Clear All</button>
+    <div id="container"></div>
+
+    <script>
+        let count = 0;
+        const container = document.getElementById("container");
+
+        function addParagraph() {
+            count++;
+            const p = document.createElement("div");
+            p.className = "paragraph";
+            p.innerHTML = `
+                Paragraph #${count}
+                <button onclick="this.parentElement.remove()" style="float:right; background:#ff4d4d; color:white; border:none; padding:4px 10px; border-radius:6px;">Delete</button>
+            `;
+            container.appendChild(p);
+        }
+
+        function clearAll() {
+            container.innerHTML = "";
+            count = 0;
+        }
+    </script>
+</body>
+</html>

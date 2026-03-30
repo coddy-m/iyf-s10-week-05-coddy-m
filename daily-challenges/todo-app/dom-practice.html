@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5 - DOM Practice Exercises</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+        header {
+            background: #667eea;
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+        h1 { font-size: 2.4rem; margin-bottom: 8px; }
+        .content { padding: 40px; }
+        .task-box {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .task-box h2 { color: #667eea; margin-bottom: 16px; }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 6px 4px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        button:hover { background: #5566cc; transform: translateY(-2px); }
+        #dynamic-nav-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 12px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        #dynamic-nav-list a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        /* Dark Mode Styles */
+.dark-mode {
+    background: #0f172a !important;
+    color: #e2e8f0 !important;
+}
+
+.dark-mode .container {
+    background: #1e2937 !important;
+}
+
+.dark-mode .task-box {
+    background: #334155 !important;
+    border-color: #475569 !important;
+    color: #e2e8f0 !important;
+}
+
+.dark-mode h2 {
+    color: #c4d0ff !important;
+}
+
+.dark-mode button {
+    background: #6366f1 !important;
+}
+
+.dark-mode button:hover {
+    background: #4f46e5 !important;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Week 5 - DOM Manipulation Practice</h1>
+            <p>Check the browser console (F12) after clicking buttons</p>
+        </header>
+
+        <div class="content">
+
+            <!-- Task 9.1 -->
+            <div class="task-box">
+                <h2>Task 9.1 - Selecting Elements</h2>
+                <button onclick="practiceSelection()">Run Selection Practice</button>
+            </div>
+
+            <!-- Task 9.2 -->
+            <div class="task-box">
+                <h2>Task 9.2 - Traversing the DOM</h2>
+                <button onclick="practiceTraversal()">Run Traversal Practice</button>
+            </div>
+
+            <!-- Task 9.3 -->
+            <div class="task-box">
+                <h2>Task 9.3 - Modifying Content</h2>
+                <button onclick="practiceModification()">Run Modification Practice</button>
+            </div>
+
+            <!-- Task 9.4 - FIXED -->
+            <div class="task-box">
+                <h2>Task 9.4 - Adding & Removing Elements</h2>
+                <p style="margin-bottom: 15px; color: #555;">
+                    Click the buttons below to dynamically add new navigation links:
+                </p>
+                <button onclick="addNavItem('Blog')">Add "Blog" Link</button>
+                <button onclick="addNavItem('Portfolio')">Add "Portfolio" Link</button>
+                <button onclick="addNavItem('Contact')">Add "Contact" Link</button>
+
+                <div style="margin-top: 25px; padding: 20px; background: #f0f8ff; border-radius: 12px;">
+                    <strong>Dynamic Navigation will appear here:</strong>
+                    <ul id="dynamic-nav-list"></ul>
+                </div>
+            </div>
+
+            <!-- Task 10.1 -->
+            <div class="task-box">
+                <h2>Task 10.1 - Event Listeners</h2>
+                <button id="counterBtn">Click Counter: 0</button>
+            </div>
+             
+            <!-- Daily Challenges -->
+            <h2 style="margin: 40px 0 20px; color: #667eea; text-align: center;">Daily Challenges</h2>
+
+            <!-- Day 1 -->
+            <div class="task-box daily-challenge">
+                <h2>Day 1: Color Changer</h2>
+                <button onclick="changeHeadingColors()">Change All Headings to Random Colors</button>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="task-box daily-challenge">
+                <h2>Day 2: Dynamic Paragraph Creator</h2>
+                <button onclick="addNumberedParagraph()">Add Numbered Paragraph</button>
+                <div id="dynamic-container"></div>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="task-box daily-challenge">
+                <h2>Day 3: Image Remover</h2>
+                <p>Click below to test image operations:</p>
+                <button onclick="removeAllImages()">Remove All Images</button>
+                <button onclick="toggleImages()">Toggle Hide/Show Images</button>
+                
+                <!-- Sample images for testing Day 3 -->
+                <div style="margin-top: 20px;">
+                    <img src="https://picsum.photos/id/1015/280/180" alt="Sample 1" style="margin: 8px; border-radius: 8px;">
+                    <img src="https://picsum.photos/id/201/280/180" alt="Sample 2" style="margin: 8px; border-radius: 8px;">
+                    <img src="https://picsum.photos/id/237/280/180" alt="Sample 3" style="margin: 8px; border-radius: 8px;">
+                </div>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="task-box daily-challenge">
+                <h2>Day 4: Content Copier</h2>
+                <div style="display: flex; gap: 30px; margin-top: 15px;">
+                    <div style="flex: 1;">
+                        <strong>Source:</strong>
+                        <p id="source-text" style="background:#f0f0f0; padding:15px; border-radius:8px; min-height:80px;">
+                            This is the original content from the source box. 
+                            You can copy it to the target using the button below.
+                        </p>
+                    </div>
+                    <div style="flex: 1;">
+                        <strong>Target:</strong>
+                        <p id="target-text" style="background:#f0f0f0; padding:15px; border-radius:8px; min-height:80px;">
+                            Content will appear here after copying...
+                        </p>
+                    </div>
+                </div>
+                <div style="margin-top: 20px;">
+                    <button onclick="copyContent()">Copy Content →</button>
+                    <button onclick="clearTarget()">Clear Target</button>
+                </div>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="task-box daily-challenge">
+                <h2>Day 5: Dark Mode Toggle</h2>
+                <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+                <p style="margin-top: 12px; font-size: 0.95rem;">
+                    Preference is saved using localStorage
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Link to your JavaScript file -->
+    <script src="dom-practice.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3 - Image Remover</title>
+    <style>
+        body { font-family: Inter, sans-serif; padding: 40px; text-align: center; }
+        img { width: 200px; margin: 15px; border-radius: 12px; }
+        button { padding: 12px 24px; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Day 3: Image Remover</h1>
+    <img src="https://picsum.photos/id/1015/300/200" alt="Image 1">
+    <img src="https://picsum.photos/id/201/300/200" alt="Image 2">
+    <img src="https://picsum.photos/id/237/300/200" alt="Image 3">
+
+    <div>
+        <button onclick="removeAllImages()">Remove All Images</button>
+        <button onclick="toggleImages()">Toggle Hide/Show Images</button>
+    </div>
+
+    <script>
+        let hidden = false;
+        function removeAllImages() {
+            document.querySelectorAll("img").forEach(img => img.remove());
+        }
+        function toggleImages() {
+            hidden = !hidden;
+            document.querySelectorAll("img").forEach(img => {
+                img.style.display = hidden ? "none" : "inline-block";
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1 - Color Changer</title>
+    <style>
+        body { font-family: Inter, sans-serif; padding: 40px; text-align: center; }
+        h1, h2, h3 { transition: color 0.4s; }
+        button {
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Day 1: Color Changer</h1>
+    <h2>This heading will change color</h2>
+    <h3>So will this one!</h3>
+    <p>Click the button to change all headings to random colors.</p>
+    
+    <button onclick="changeColors()">Change Headings Color</button>
+
+    <script>
+        function changeColors() {
+            const headings = document.querySelectorAll("h1, h2, h3");
+            headings.forEach(h => {
+                const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                h.style.color = randomColor;
+            });
+            console.log("Day 1: Colors changed randomly");
+        }
+    </script>
+</body>
+</html>
