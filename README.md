@@ -87,8 +87,8 @@ iyf-s10-week-05-coddy-m/
 
 
 ## Screenshots
-https://github.com/coddy-m/iyf-s10-week-5-coddy-m/blob/main/images/Screenshot%20(22).png
-https://github.com/coddy-m/iyf-s10-week-5-coddy-m/blob/main/images/Screenshot%20(24).png
+https://github.com/coddy-m/iyf-s10-week-05-coddy-m/blob/main/images/Screenshot%20(22).png
+https://github.com/coddy-m/iyf-s10-week-05-coddy-m/blob/main/images/Screenshot%20(24).png
 
 **DOM Practice Page**  
 
