@@ -77,11 +77,6 @@ No installation required — pure vanilla web technologies.
 - **Problem**: Functions not defined when buttons clicked  
   **Solution**: Ensured all functions were declared before `window.onload` and script loaded at the end of HTML
 -----
-## Screenshots
-- https://github.com/coddy-m/iyf-s10-week-05-coddy-m/blob/main/images/Screenshot%20(22).png
-- https://github.com/coddy-m/iyf-s10-week-05-coddy-m/blob/main/images/Screenshot%20(24).png
-----
-**DOM Practice Page**  
 
 **Interactive To-Do List in action**
 - [To-Do list](https://coddy-m.github.io/todo-list-app/)
