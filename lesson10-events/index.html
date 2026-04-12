@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events Practice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Event Handling Practice</h1>
+        
+        <!-- Task 10.1: Click Counter -->
+        <section class="card">
+            <h2>Click Counter</h2>
+            <div class="counter-display">
+                <span id="count">0</span>
+            </div>
+            <div class="counter-buttons">
+                <button id="decrease">−</button>
+                <button id="reset">Reset</button>
+                <button id="increase">+</button>
+            </div>
+        </section>
+
+        <!-- Task 10.2: Keyboard Shortcuts -->
+        <section class="card">
+            <h2>Keyboard Shortcuts</h2>
+            <p><strong>Ctrl+S</strong>: Save | <strong>Escape</strong>: Clear | <strong>Ctrl+Enter</strong>: Submit</p>
+            <form id="shortcut-form">
+                <input type="text" id="shortcut-input" placeholder="Type something...">
+                <button type="submit">Submit</button>
+            </form>
+            <div id="shortcut-feedback"></div>
+        </section>
+
+        <!-- Task 10.3: Event Delegation -->
+        <section class="card">
+            <h2>Delegated Task List</h2>
+            <ul id="delegated-list">
+                <li data-id="1">Learn DOM <button class="delete-btn">×</button></li>
+                <li data-id="2">Practice Events <button class="delete-btn">×</button></li>
+                <li data-id="3" class="completed">Build Project <button class="delete-btn">×</button></li>
+            </ul>
+            <form id="add-delegated-task">
+                <input type="text" id="new-task-input" placeholder="New task...">
+                <button type="submit">Add</button>
+            </form>
+        </section>
+
+        <!-- Task 10.4: Form Validation -->
+        <section class="card">
+            <h2>Form Validation</h2>
+            <form id="validated-form">
+                <div class="form-group">
+                    <label for="valid-name">Name:</label>
+                    <input type="text" id="valid-name" required minlength="2">
+                    <span class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="valid-email">Email:</label>
+                    <input type="email" id="valid-email" required>
+                    <span class="error-message"></span>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="form-feedback"></div>
+        </section>
+    </div>
+    
+    <script src="events.js"></script>
+</body>
+</html>

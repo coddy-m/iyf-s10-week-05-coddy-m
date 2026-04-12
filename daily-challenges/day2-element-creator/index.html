@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 2: Dynamic Element Creator</title>
+    <style>
+        body { font-family: sans-serif; padding: 2rem; max-width: 600px; margin: 0 auto; }
+        #addBtn {
+            padding: 0.75rem 1.5rem;
+            background: #06d6a0;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+        .dynamic-para {
+            padding: 1rem;
+            background: #f8f9fa;
+            border-left: 4px solid #06d6a0;
+            margin: 0.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .delete-btn {
+            background: #ef476f;
+            color: white;
+            border: none;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>➕ Dynamic Element Creator</h1>
+    <button id="addBtn">Add Paragraph</button>
+    <div id="container"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

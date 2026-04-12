@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 4: Content Copier</title>
+    <style>
+        body { font-family: sans-serif; padding: 2rem; }
+        .boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        @media (max-width: 600px) {
+            .boxes { grid-template-columns: 1fr; }
+        }
+        .box {
+            border: 2px dashed #667eea;
+            border-radius: 8px;
+            padding: 1rem;
+            min-height: 150px;
+            background: #f8f9fa;
+        }
+        .box h3 { margin-top: 0; color: #667eea; }
+        #source {
+            outline: none;
+            min-height: 100px;
+        }
+        #copyBtn {
+            padding: 0.75rem 1.5rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 1rem 0;
+        }
+        .success {
+            color: #06d6a0;
+            font-weight: bold;
+            margin-left: 1rem;
+        }
+        /* Drag and drop styles */
+        .drag-over {
+            border-color: #06d6a0 !important;
+            background: #e8f5e9 !important;
+        }
+    </style>
+</head>
+<body>
+    <h1>📋 Content Copier Challenge</h1>
+    
+    <div class="boxes">
+        <div class="box">
+            <h3>📝 Source (Editable)</h3>
+            <div id="source" contenteditable="true">
+                Type or paste content here...
+            </div>
+        </div>
+        <div class="box">
+            <h3>📄 Target</h3>
+            <div id="target">Content will appear here</div>
+        </div>
+    </div>
+    
+    <button id="copyBtn">Copy Content →</button>
+    <span id="feedback"></span>
+    
+    <script src="script.js"></script>
+</body>
+</html>
