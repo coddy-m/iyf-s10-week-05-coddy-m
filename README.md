@@ -5,69 +5,83 @@
 - **GitHub:** [@coddy-m](https://github.com/coddy-m)  
 - **Date:** March 30, 2026
 ----
-# Week 5: Interactive Web Pages with JavaScript 🎮
 
-Complete solutions for DOM manipulation, event handling, and the To-Do List project.
+## Project Description
 
-## 🚀 How to Use
+This project demonstrates a deep understanding of **DOM Manipulation** and **Event Handling** using vanilla JavaScript. 
 
-1. **Clone or download** this folder
-2. **Open any `index.html`** in your browser
-3. **Open DevTools Console** to see logs and debug
-4. **Modify the code** and refresh to experiment!
+It includes:
+- A comprehensive practice page covering all Lesson 9 & 10 concepts
+- All 5 Daily Challenges
+- A fully functional **Interactive To-Do List** (main deliverable)
 
-## ✅ Features Implemented
+- The goal was to master selecting elements, traversing the DOM, modifying content, dynamically adding/removing elements, and handling user interactions effectively.
+----
 
-### Lesson 9: DOM Fundamentals
-- [x] All selection methods (`getElementById`, `querySelector`, etc.)
-- [x] DOM traversal (parent, children, siblings)
-- [x] Content modification (textContent, innerHTML, attributes)
-- [x] Dynamic element creation & removal
-- [x] Style manipulation
+## Technologies Used
+- HTML5
+- CSS3 (Flexbox & modern styling)
+- Vanilla JavaScript (No frameworks or libraries)
+- localStorage (for data persistence and dark mode preference)
+----
+## Features 
 
-### Lesson 10: Events & Interaction
-- [x] Event listeners (click, keyboard, form)
-- [x] Event object properties & methods
-- [x] Event bubbling & delegation
-- [x] Form validation with real-time feedback
+- Element selection using `getElementById`, `querySelector`, `querySelectorAll`
+- DOM Traversal (parent, children, siblings)
+- Modifying content, attributes, and inline styles
+- Dynamically adding and removing elements (Blog, Portfolio, Contact links)
+- Event listeners and click counter
+- All **5 Daily Challenges** implemented
 
-### To-Do List App
-- [x] Add/delete/toggle tasks
-- [x] Filter: All/Active/Completed
-- [x] Stats counter & clear completed
-- [x] LocalStorage persistence
-- [x] Edit on double-click (bonus)
-- [x] Responsive design & smooth animations
+### Main Deliverable: Interactive To-Do List (`todo-app/`)
+- Add new tasks
+- Toggle task completion (strikethrough)
+- Delete tasks
+- Filter tasks (All / Active / Completed)
+- Live "X items left" counter
+- Clear completed tasks
+- Bonus: Double-click to edit tasks
+- Data persists using `localStorage`
+----
+## How to Run
 
-### Daily Challenges
-- [x] Day 1: Random color generator for headings
-- [x] Day 2: Dynamic paragraph creator with delete
-- [x] Day 3: Image remover with toggle bonus
-- [x] Day 4: Content copier with drag & drop
-- [x] Day 5: Dark mode with localStorage & animation
+### 1. DOM Practice Page
+1. Open `dom-practice.html` in your browser
+2. Open Developer Tools (F12) → Console to see results
+3. Click any button to test the exercises
+-----
 
-## 💡 Pro Tips
+### 2. Interactive To-Do List
+1. Navigate to the `todo-app/` folder
+2. Open `index.html` in your browser
+3. Start adding and managing your tasks
+4. 
+No installation required — pure vanilla web technologies.
+-----
+## Lessons Learned
+- How to efficiently select and manipulate DOM elements
+- The importance of **event delegation** for dynamic content
+- Difference between `textContent`, `innerHTML`, and proper security practices
+- How to create, append, and remove elements dynamically
+- Working with the Event object (`event.target`, `preventDefault`, etc.)
+- Using `localStorage` to persist user preferences and data
+- Implementing dark mode with smooth transitions
+-----
+## Challenges Faced & Solutions
+- **Problem**: Dynamically added links not appearing  
+  **Solution**: Properly created container with correct `id` and used `appendChild()`
 
-1. **Test incrementally**: Get one feature working before adding the next
-2. **Use console.log()**: Debug by logging values and events
-3. **Check the DOM**: Use Elements tab to see changes in real-time
-4. **Event delegation**: Use one listener on parent instead of many on children
-5. **Security**: Use `textContent` instead of `innerHTML` for user input
+- **Problem**: Dark mode not applying styles consistently  
+  **Solution**: Used `!important` in CSS and properly toggled class on `document.body`
 
-## 🔧 Troubleshooting
+- **Problem**: Functions not defined when buttons clicked  
+  **Solution**: Ensured all functions were declared before `window.onload` and script loaded at the end of HTML
+-----
 
-- **Code not working?** Check browser console for errors (F12 → Console)
-- **Styles not applying?** Verify CSS file is linked correctly
-- **Events not firing?** Check if element exists when listener is added
-- **LocalStorage not saving?** Ensure you're not in private browsing mode
+**Interactive To-Do List in action**
+- [To-Do list](https://coddy-m.github.io/todo-list-app/)
+---
 
-## 🎯 Next Steps
 
-After completing Week 5:
-1. Add animations to the To-Do List (slide in/out)
-2. Implement task categories/tags
-3. Add due dates with date picker
-4. Build a backend to sync across devices
-5. Convert to a PWA for offline use
-
-Happy coding! 🚀✨
+**Week 5 Submission** – DOM Manipulation  
+March 2026
