@@ -15,7 +15,7 @@ It includes:
 - All 5 Daily Challenges
 - A fully functional **Interactive To-Do List** (main deliverable)
 
-The goal was to master selecting elements, traversing the DOM, modifying content, dynamically adding/removing elements, and handling user interactions effectively.
+- The goal was to master selecting elements, traversing the DOM, modifying content, dynamically adding/removing elements, and handling user interactions effectively.
 ----
 
 ## Technologies Used
